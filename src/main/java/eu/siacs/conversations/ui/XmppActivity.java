@@ -105,6 +105,7 @@ public abstract class XmppActivity extends ActionBarActivity {
     protected int mTheme;
     protected boolean mUsingEnterKey = false;
     protected boolean mUseTor = false;
+    protected boolean mUseI2P = false;
     protected Toast mToast;
     public Runnable onOpenPGPKeyPublished = () -> Toast.makeText(XmppActivity.this, R.string.openpgp_has_been_published, Toast.LENGTH_SHORT).show();
     protected ConferenceInvite mPendingConferenceInvite = null;
@@ -222,6 +223,7 @@ public abstract class XmppActivity extends ActionBarActivity {
         }
         this.mUsingEnterKey = usingEnterKey();
         this.mUseTor = useTor();
+        this.mUseI2P = useI2P();
     }
 
     public void connectToBackend() {
@@ -461,6 +463,10 @@ public abstract class XmppActivity extends ActionBarActivity {
 
     private boolean useTor() {
         return QuickConversationsService.isConversations() && getBooleanPreference("use_tor", R.bool.use_tor);
+    }
+
+    private boolean useI2P() {
+        return QuickConversationsService.isConversations() && getBooleanPreference("use_i2p", R.bool.use_i2p);
     }
 
     protected SharedPreferences getPreferences() {

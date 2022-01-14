@@ -502,6 +502,8 @@
     <string name="pref_connection_options">Подключение</string>
     <string name="pref_use_tor">Соединение через Tor</string>
     <string name="pref_use_tor_summary">Направить все соединения через сеть Tor. Требуется Orbot</string>
+    <string name="pref_use_i2p">Соединение через I2P</string>
+    <string name="pref_use_i2p_summary">Направить все соединения через сеть I2P. Требуется I2P клиент</string>
     <string name="account_settings_hostname">Имя сервера</string>
     <string name="account_settings_port">Порт</string>
     <string name="hostname_or_onion">Сервер- или .onion-адрес</string>
@@ -939,6 +941,7 @@
     <string name="ongoing_call">Активный вызов</string>
     <string name="ongoing_video_call">Активный видеовызов</string>
     <string name="disable_tor_to_make_call">Отключите Tor для совершения звонков</string>
+    <string name="no_i2p_calls">Звонки через I2P недоступны</string>
     <string name="incoming_call">Входящий вызов</string>
     <string name="incoming_call_duration">Входящий вызов · %s</string>
     <string name="missed_call_timestamp">Пропущенный вызов · %s</string>

@@ -165,8 +165,11 @@ public class JingleSocks5Transport extends JingleTransport {
             final int timeout = candidate.getType() == JingleCandidate.TYPE_DIRECT ? SOCKET_TIMEOUT_DIRECT : SOCKET_TIMEOUT_PROXY;
             try {
                 final boolean useTor = this.account.isOnion() || connection.getConnectionManager().getXmppConnectionService().useTorToConnect();
-                if (useTor) {
+                final boolean useI2P = this.account.isI2P() || connection.getConnectionManager().getXmppConnectionService().useI2PToConnect();
+                if (useTor && !useI2P) {
                     socket = SocksSocketFactory.createSocketOverTor(candidate.getHost(), candidate.getPort());
+                } else if (useI2P) {
+                    socket = SocksSocketFactory.createSocketOverI2P(candidate.getHost(), candidate.getPort());
                 } else {
                     socket = new Socket();
                     SocketAddress address = new InetSocketAddress(candidate.getHost(), candidate.getPort());

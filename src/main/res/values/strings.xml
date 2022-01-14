@@ -498,6 +498,8 @@
     <string name="pref_connection_options">Connection</string>
     <string name="pref_use_tor">Connect via Tor</string>
     <string name="pref_use_tor_summary">Tunnel all connections through the Tor network. Requires Orbot</string>
+    <string name="pref_use_i2p">Connect via I2P</string>
+    <string name="pref_use_i2p_summary">Tunnel all connections through the I2P network. Requires I2P client</string>
     <string name="account_settings_hostname">Hostname</string>
     <string name="account_settings_port">Port</string>
     <string name="hostname_or_onion">Server- or .onion-address</string>
@@ -932,6 +934,7 @@
     <string name="reconnecting_call">Reconnecting call</string>
     <string name="reconnecting_video_call">Reconnecting video call</string>
     <string name="disable_tor_to_make_call">Disable Tor to make calls</string>
+    <string name="no_i2p_calls">Calls can’t be done via I2P</string>
     <string name="incoming_call">Incoming call</string>
     <string name="incoming_call_duration">Incoming call · %s</string>
     <string name="missed_call_timestamp">Missed call · %s</string>
