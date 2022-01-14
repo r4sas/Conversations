@@ -51,8 +51,8 @@ public class ChannelDiscoveryService {
 
     void initializeMuclumbusService() {
         final OkHttpClient.Builder builder = HttpConnectionManager.OK_HTTP_CLIENT.newBuilder();
-        if (service.useTorToConnect()) {
-            builder.proxy(HttpConnectionManager.getProxy());
+        if (service.useTorToConnect() || service.useI2PToConnect()) {
+            builder.proxy(HttpConnectionManager.getProxy(service.useI2PToConnect()));
         }
         Retrofit retrofit = new Retrofit.Builder()
                 .client(builder.build())

@@ -1569,6 +1569,10 @@ public class ConversationFragment extends XmppFragment
             Toast.makeText(activity, R.string.disable_tor_to_make_call, Toast.LENGTH_SHORT).show();
             return;
         }
+        if (activity.mUseI2P || conversation.getAccount().isI2P()) {
+            Toast.makeText(activity, R.string.no_i2p_calls, Toast.LENGTH_SHORT).show();
+            return;
+        }
         final List<String> permissions;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             permissions =
@@ -1586,6 +1590,10 @@ public class ConversationFragment extends XmppFragment
     private void checkPermissionAndTriggerVideoCall() {
         if (activity.mUseTor || conversation.getAccount().isOnion()) {
             Toast.makeText(activity, R.string.disable_tor_to_make_call, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (activity.mUseI2P || conversation.getAccount().isI2P()) {
+            Toast.makeText(activity, R.string.no_i2p_calls, Toast.LENGTH_SHORT).show();
             return;
         }
         final List<String> permissions;
