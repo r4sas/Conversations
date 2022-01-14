@@ -91,7 +91,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 42031
-        versionName "2.10.5"
+        versionName "2.10.5-I2P"
         archivesBaseName += "-$versionName"
         applicationId "eu.siacs.conversations"
         resValue "string", "applicationId", applicationId
