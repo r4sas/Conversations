@@ -388,7 +388,7 @@ public class MemorizingTrustManager {
             } catch (final CertificateException e) {
                 final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(master);
                 final boolean trustSystemCAs = !preferences.getBoolean("dont_trust_system_cas", false);
-                if (domain != null && isServer && trustSystemCAs && !isIp(domain) && !domain.endsWith(".onion")) {
+                if (domain != null && isServer && trustSystemCAs && !isIp(domain) && !domain.endsWith(".onion") && !domain.endsWith(".i2p")) {
                     final String hash = getBase64Hash(chain[0], "SHA-256");
                     final List<String> fingerprints = getPoshFingerprints(domain);
                     if (hash != null && fingerprints.size() > 0) {
@@ -429,10 +429,11 @@ public class MemorizingTrustManager {
         Log.d(Config.LOGTAG, "downloading json for " + domain + " from " + url);
         final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(master);
         final boolean useTor = QuickConversationsService.isConversations() && preferences.getBoolean("use_tor", master.getResources().getBoolean(R.bool.use_tor));
+        final boolean useI2P = QuickConversationsService.isConversations() && preferences.getBoolean("use_i2p", master.getResources().getBoolean(R.bool.use_i2p));
         try {
             final List<String> results = new ArrayList<>();
-            final InputStream inputStream = HttpConnectionManager.open(url, useTor);
-            final String body = CharStreams.toString(new InputStreamReader(ByteStreams.limit(inputStream,10_000), Charsets.UTF_8));
+            final InputStream inputStream = HttpConnectionManager.open(url, useTor, useI2P);
+            final String body = CharStreams.toString(new InputStreamReader(ByteStreams.limit(inputStream, 10_000), Charsets.UTF_8));
             final JSONObject jsonObject = new JSONObject(body);
             int expires = jsonObject.getInt("expires");
             if (expires <= 0) {
