@@ -97,9 +97,9 @@ android {
         versionCode 42041
         versionName "2.11.0"
         archivesBaseName += "-$versionName"
-        applicationId "eu.siacs.conversations"
+        applicationId "org.purplei2p.conversations"
         resValue "string", "applicationId", applicationId
-        def appName = "Conversations"
+        def appName = "Conversations-I2P"
         resValue "string", "app_name", appName
         buildConfigField "String", "APP_NAME", "\"$appName\"";
     }
