@@ -1,1 +1,1 @@
-An encrypted, user friendly XMPP instant messaging client optimized for mobile
+A Conversations fork with I2P support

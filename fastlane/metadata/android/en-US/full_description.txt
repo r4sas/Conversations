@@ -1,3 +1,10 @@
+Conversations-I2P is a fork of <a href="https://f-droid.org/packages/eu.siacs.conversations/">Conversations</a>.
+
+Changes to origin:
+* Added I2P support
+* Changed default configuration for better security
+* Package name changed to org.purplei2p.conversations
+
 Easy to use, reliable, battery friendly. With built-in support for images, group chats and e2e encryption.
 
 Design principles:
