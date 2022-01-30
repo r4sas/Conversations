@@ -472,6 +472,7 @@
     <string name="download_failed_could_not_connect">Загрузка не удалась: не удалось подключиться к серверу</string>
     <string name="download_failed_could_not_write_file">Загрузка не удалась: ошибка записи файла</string>
     <string name="account_status_tor_unavailable">Сеть Tor недоступна</string>
+    <string name="account_status_i2p_unavailable">Сеть I2P недоступна</string>
     <string name="account_status_bind_failure">Ошибка связывания</string>
     <string name="account_status_host_unknown">Сервер не ответственен за этот домен</string>
     <string name="server_info_broken">Повреждено</string>
