@@ -646,6 +646,7 @@ public class Account extends AbstractEntity implements AvatarService.Avatarable 
         TLS_ERROR_DOMAIN,
         INCOMPATIBLE_SERVER,
         TOR_NOT_AVAILABLE,
+        I2P_NOT_AVAILABLE,
         DOWNGRADE_ATTACK,
         SESSION_FAILURE,
         BIND_FAILURE,
@@ -716,6 +717,8 @@ public class Account extends AbstractEntity implements AvatarService.Avatarable 
                     return R.string.account_status_incompatible_server;
                 case TOR_NOT_AVAILABLE:
                     return R.string.account_status_tor_unavailable;
+                case I2P_NOT_AVAILABLE:
+                    return R.string.account_status_i2p_unavailable;
                 case BIND_FAILURE:
                     return R.string.account_status_bind_failure;
                 case SESSION_FAILURE:

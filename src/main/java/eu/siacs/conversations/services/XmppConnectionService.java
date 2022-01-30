@@ -837,7 +837,7 @@ public class XmppConnectionService extends Service {
 
     private void handleOrbotStartedEvent() {
         for (final Account account : accounts) {
-            if (account.getStatus() == Account.State.TOR_NOT_AVAILABLE) {
+            if (account.getStatus() == Account.State.TOR_NOT_AVAILABLE || account.getStatus() == Account.State.I2P_NOT_AVAILABLE) {
                 reconnectAccount(account, true, false);
             }
         }
