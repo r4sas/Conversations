@@ -487,7 +487,11 @@ public class XmppConnection implements Runnable {
                 | SocksSocketFactory.HostNotFoundException e) {
             this.changeStatus(Account.State.SERVER_NOT_FOUND);
         } catch (final SocksSocketFactory.SocksProxyNotFoundException e) {
-            this.changeStatus(Account.State.TOR_NOT_AVAILABLE);
+            if (!account.isI2P()) {
+                this.changeStatus(Account.State.TOR_NOT_AVAILABLE);
+            } else {
+                this.changeStatus(Account.State.I2P_NOT_AVAILABLE);
+            }
         } catch (final IOException | XmlPullParserException e) {
             Log.d(Config.LOGTAG, account.getJid().asBareJid().toString() + ": " + e.getMessage());
             this.changeStatus(Account.State.OFFLINE);

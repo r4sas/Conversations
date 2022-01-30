@@ -468,6 +468,7 @@
     <string name="download_failed_could_not_write_file">Download failed: Could not write file</string>
     <string name="download_failed_invalid_file">Download failed: Invalid file</string>
     <string name="account_status_tor_unavailable">Tor network unavailable</string>
+    <string name="account_status_i2p_unavailable">I2P network unavailable</string>
     <string name="account_status_bind_failure">Bind failure</string>
     <string name="account_status_host_unknown">The server is not responsible for this domain</string>
     <string name="server_info_broken">Broken</string>
