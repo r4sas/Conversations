@@ -172,6 +172,7 @@ public class EditAccountActivity extends OmemoActivity implements OnAccountUpdat
 
             XmppConnection connection = mAccount == null ? null : mAccount.getXmppConnection();
             final boolean startOrbot = mAccount != null && mAccount.getStatus() == Account.State.TOR_NOT_AVAILABLE;
+            final boolean startI2P = mAccount != null && mAccount.getStatus() == Account.State.I2P_NOT_AVAILABLE;
             if (startOrbot) {
                 if (TorServiceUtils.isOrbotInstalled(EditAccountActivity.this)) {
                     TorServiceUtils.startOrbot(EditAccountActivity.this, REQUEST_ORBOT);
@@ -179,6 +180,10 @@ public class EditAccountActivity extends OmemoActivity implements OnAccountUpdat
                     TorServiceUtils.downloadOrbot(EditAccountActivity.this, REQUEST_ORBOT);
                 }
                 return;
+            }
+
+            if (startI2P) {
+                return; // just exit
             }
 
             if (inNeedOfSaslAccept()) {
