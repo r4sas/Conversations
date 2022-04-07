@@ -93,7 +93,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 32
         versionCode 42038
-        versionName "2.10.10-I2P"
+        versionName "2.10.10"
         archivesBaseName += "-$versionName"
         applicationId "org.purplei2p.conversations"
         resValue "string", "applicationId", applicationId
