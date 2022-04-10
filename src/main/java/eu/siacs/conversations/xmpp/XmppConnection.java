@@ -881,7 +881,7 @@ public class XmppConnection implements Runnable {
 
     private void processStreamFeatures(final Tag currentTag) throws IOException {
         this.streamFeatures = tagReader.readElement(currentTag);
-        final boolean isSecure = features.encryptionEnabled || Config.ALLOW_NON_TLS_CONNECTIONS || account.isOnion();
+        final boolean isSecure = features.encryptionEnabled || Config.ALLOW_NON_TLS_CONNECTIONS || account.isOnion() || account.isI2P();
         final boolean needsBinding = !isBound && !account.isOptionSet(Account.OPTION_REGISTER);
         if (this.streamFeatures.hasChild("starttls") && !features.encryptionEnabled) {
             sendStartTLS();
