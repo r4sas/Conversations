@@ -1,0 +1,2 @@
+* Fix interaction with Google Maps Share Location Plugin
+* Remove footnote with regards to server fee
