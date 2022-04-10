@@ -1407,7 +1407,7 @@ public class XmppConnection implements Runnable {
     }
 
     private boolean isSecure() {
-        return features.encryptionEnabled || Config.ALLOW_NON_TLS_CONNECTIONS || account.isOnion();
+        return features.encryptionEnabled || Config.ALLOW_NON_TLS_CONNECTIONS || account.isOnion() || account.isI2P();
     }
 
     private void authenticate(final SaslMechanism.Version version) throws IOException {
